@@ -10,8 +10,6 @@ terraform {
 
 provider "aws" {
     region = "ap-southeast-2"
-    access_key = "AKIA4LVDRNNYS4VGG2YM"
-    secret_key = "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"
 }
 
 
@@ -31,3 +29,11 @@ provider "aws" {
 #   }
 # }
 
+
+resource "aws_vpc" "first-vpc" {
+  cidr_block = "10.0.0.0/16"
+    tags = {
+    Name = "production"
+  }
+
+}
